@@ -52,6 +52,10 @@ public class Workspace extends Gmail{
               prevStart=currStart;
               prevEnd=currEnd;
           }
+          else{
+              if(prevEnd.isBefore(currEnd)) prevEnd=currEnd;
+              if(prevStart.isAfter(currStart)) prevStart=currStart;
+          }
         }
         return count;
     }
