@@ -53,6 +53,7 @@ public class Gmail extends Email {
     public String findLatestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the latest mail present in the inbox
+        if(messages.size()==0) return "";
         int n=messages.size();
         String latest=messages.get(n-1).message;
         return latest;
@@ -61,6 +62,7 @@ public class Gmail extends Email {
     public String findOldestMessage(){
         // If the inbox is empty, return null
         // Else, return the message of the oldest mail present in the inbox
+        if(messages.size()==0) return "";
         return messages.get(0).message;
 
     }
