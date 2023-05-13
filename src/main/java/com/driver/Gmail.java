@@ -35,7 +35,8 @@ public class Gmail extends Email {
         // 2. The mails are received in non-decreasing order. This means that the date of a new mail is greater than equal to the dates of mails received already.
         mailsInfo m=new mailsInfo(date,sender,message);
         if(messages.size()==inboxCapacity){
-            trashbin.add(messages.remove(0));
+            trashbin.add(messages.get(0));
+            messages.remove(0);
         }
         messages.add(m);
     }
@@ -45,7 +46,8 @@ public class Gmail extends Email {
         // If the given message is found in any mail in the inbox, move the mail to trash, else do nothing
             for(int i=0;i< messages.size();i++){
                 if(messages.get(i).message.compareTo(messag)==0){
-                    trashbin.add(messages.remove(i));
+                    trashbin.add(messages.get(i));
+                    messages.remove(i);
                 }
             }
     }
@@ -73,7 +75,7 @@ public class Gmail extends Email {
         int count=0;
         int n=messages.size();
         for(int i=0;i<n;i++){
-            if((messages.get(i).date.compareTo(start)==0 ||messages.get(i).date.after(start)) && (messages.get(i).date.before(end))){
+            if((messages.get(i).date.compareTo(start)==0 ||messages.get(i).date.after(start)) && (messages.get(i).date.compareTo(end)==0  ||messages.get(i).date.before(end))){
                 count++;
             }
         }
