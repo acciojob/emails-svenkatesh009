@@ -20,7 +20,7 @@ public class Gmail extends Email {
     }
     private ArrayList<mailsInfo> messages =new ArrayList<>();
     private ArrayList<mailsInfo> trashbin =new ArrayList<>();
-    int inboxCapacity; //maximum number of mails inbox can store
+    protected int inboxCapacity; //maximum number of mails inbox can store
     //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
     //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
     public Gmail(String emailId, int inboxCapacity) {

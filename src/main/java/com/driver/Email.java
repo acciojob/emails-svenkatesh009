@@ -11,17 +11,18 @@ public class Email {
     }
 
     public String getEmailId() {
-        return emailId;
+        return this.emailId;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void changePassword(String oldPassword, String newPassword){
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
         // 1. It contains at least 8 characters
-        if(oldPassword.compareTo(this.password)==0) return;
+        if(newPassword.contains(" ")) return;
+        if(oldPassword.compareTo(this.password)!=0) return;
         if(newPassword.length()<8) return;
         int upper=0;
         int lower=0;
