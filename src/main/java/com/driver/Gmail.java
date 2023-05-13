@@ -73,7 +73,7 @@ public class Gmail extends Email {
         int count=0;
         int n=messages.size();
         for(int i=0;i<n;i++){
-            if((messages.get(i).date.compareTo(start)==0 ||messages.get(i).date.after(start)) && (messages.get(i).date.compareTo(end)==0  ||messages.get(i).date.before(end))){
+            if((messages.get(i).date.compareTo(start)==0 ||messages.get(i).date.after(start)) && (messages.get(i).date.before(end))){
                 count++;
             }
         }
