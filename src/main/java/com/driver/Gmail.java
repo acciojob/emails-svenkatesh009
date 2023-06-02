@@ -67,6 +67,7 @@ public class Gmail extends Email {
         if(messages.size()==0) return null;
         return messages.get(0).message;
 
+
     }
 
     public int findMailsBetweenDates(Date start, Date end){
